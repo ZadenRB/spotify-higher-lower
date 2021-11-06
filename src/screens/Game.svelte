@@ -141,9 +141,9 @@
         display: flex;
     }
 
-    #neutral,
     #correct,
-    #incorrect {
+    #incorrect,
+    #neutral {
         width: 10vw;
         height: 10vw;
         max-width: 120px;
@@ -159,19 +159,22 @@
         border-radius: 50%;
     }
 
-    #neutral {
-        font-size: 35px;
-        background-color: #999;
+    #correct,
+    #incorrect {
+        font-size: 52.5px;
     }
 
     #correct {
-        font-size: 52.5px;
         background-color: #00bb00;
     }
 
     #incorrect {
-        font-size: 52.5px;
         background-color: #bb0000;
+    }
+
+    #neutral {
+        font-size: 35px;
+        background-color: #999;
     }
 
     #high-score {
@@ -195,22 +198,22 @@
             flex-direction: column;
         }
 
-        #neutral,
         #correct,
-        #incorrect {
+        #incorrect,
+        #neutral {
             width: 6vh;
             height: 6vh;
             top: calc(50vh - calc(min(6vh, 120px) / 2));
             left: calc(50vw - calc(min(6vh, 120px) / 2));
         }
 
-        #neutral {
-            font-size: 20px;
-        }
-
         #correct,
         #incorrect {
             font-size: 30px;
+        }
+
+        #neutral {
+            font-size: 20px;
         }
 
         #high-score,

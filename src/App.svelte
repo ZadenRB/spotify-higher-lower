@@ -56,6 +56,3 @@
 {:else if !playing}
 	<Menu {loading} {onPlay}/>
 {/if}
-
-<style>
-</style>

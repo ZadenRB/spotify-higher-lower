@@ -17,7 +17,7 @@
         {#if loading}
             <Spinner />
         {:else}
-            <div id="play" on:click={() => onPlay()}>Play</div>
+            <div class="button" on:click={() => onPlay()}>Play</div>
         {/if}
     </div>
 </main>
@@ -38,23 +38,7 @@
         margin: 4.5vw 4.5vw;
     }
 
-    #play {
-        width: 75px;
-        padding: 10px 20px;
-
-        border: 1px solid white;
-        border-radius: 20px;
-
-        cursor: pointer;
-
-        transition: background-color 150ms ease, color 150ms ease;
-
-        color: #1db964;
-        text-align: center;
-    }
-
-    #play:hover {
-        background-color: white;
-        color: #191414;
+    .button {
+        width: 100px;
     }
 </style>
