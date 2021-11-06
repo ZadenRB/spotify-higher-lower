@@ -174,7 +174,7 @@
 
     #neutral {
         font-size: 35px;
-        background-color: #999;
+        background-color: #555;
     }
 
     #high-score {

@@ -29,11 +29,29 @@
 		{#if !showValue}
 			<div class="button-group">
 				<div class="buttons">
-					<div class="button" on:click={() => clicked(true)}>
+					<div
+						class="button"
+						tabindex="0"
+						on:click={() => clicked(true)}
+						on:keypress={(event) => {
+							if (event.key == "Enter") {
+								clicked(true);
+							}
+						}}
+					>
 						<span class="button-text">Higher</span>
 						<span class="button-arrow">&#9650;</span>
 					</div>
-					<div class="button" on:click={() => clicked(false)}>
+					<div
+						class="button"
+						tabindex="0"
+						on:click={() => clicked(false)}
+						on:keypress={(event) => {
+							if (event.key == "Enter") {
+								clicked(false);
+							}
+						}}
+					>
 						<span class="button-text">Lower</span>
 						<span class="button-arrow">&#9660;</span>
 					</div>

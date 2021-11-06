@@ -17,7 +17,18 @@
         {#if loading}
             <Spinner />
         {:else}
-            <div class="button" on:click={() => onPlay()}>Play</div>
+            <div
+                class="button"
+                tabindex="0"
+                on:click={onPlay}
+                on:keypress={(event) => {
+                    if (event.key == "Enter") {
+                        onPlay();
+                    }
+                }}
+            >
+                Play
+            </div>
         {/if}
     </div>
 </main>
