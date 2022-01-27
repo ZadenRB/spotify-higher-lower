@@ -9,7 +9,7 @@ A guessing game where the player must guess if Spotify songs are more or less po
 ### API
 
 1. Install [Go](https://go.dev/doc/install)
-2. Get packages `go get -v`
+2. Get packages `go get -v` in `src/api`
 3. Create a [Spotify app](https://developer.spotify.com/dashboard/applications)
 4. Set environment variables (add to `rc` file if desired)
 	1. `export SPOTIFY_HIGHER_LOWER_FRONTEND=<URL of Frontend>` - For local development, use `http://localhost:5000`
@@ -19,29 +19,29 @@ A guessing game where the player must guess if Spotify songs are more or less po
 ### Frontend
 
 1. Install [npm](https://docs.npmjs.com/cli/v7/configuring-npm/install)
-2. Get node modules `npm install`
+2. Get node modules `npm install` in `src/frontend`
 3. In src/main.ts, set `requestUri: <API URI>` - For local development, use `http://localhost:8000/random`
 	
 ## Running
 
 ### Running the API
 
-	cd api
+	cd src/api
 	go run main.go
 
 ### Running the Frontend
 
-	cd frontend
+	cd src/frontend
 	npm run dev
 
 ## Building
 
 ### Building the API
 
-	cd api
+	cd src/api
 	go build main.go
 
 ### Building the Frontend
 
-	cd frontend
+	cd src/frontend
 	npm run build
