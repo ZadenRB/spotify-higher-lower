@@ -20,6 +20,7 @@ A guessing game where the player must guess if Spotify songs are more or less po
 
 1. Install [npm](https://docs.npmjs.com/cli/v7/configuring-npm/install)
 2. Get node modules `npm install`
+3. In src/main.ts, set `requestUri: <API URI>` - For local development, use `http://localhost:8000/random`
 	
 ## Running
 

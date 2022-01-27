@@ -5,7 +5,7 @@ const app = new App({
 	props: {
 		valueDescription: "popularity rating",
 		shortValueDescription: "rating",
-		requestURI: "http://localhost:8000/random",
+		requestURI: "http://herokuapp",
 	},
 });
 
