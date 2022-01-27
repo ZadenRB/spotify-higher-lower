@@ -2,7 +2,7 @@
 
 A guessing game where the player must guess if Spotify songs are more or less popular than one another.
 
-![](https://github.com/ZadenRB/spotify-higher-lower/blob/master/Higher-Lower.gif)
+![](https://github.com/ZadenRB/spotify-higher-lower/blob/main/Higher-Lower.gif)
 
 ## Setup & Prerequisites
 
