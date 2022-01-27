@@ -5,7 +5,7 @@ const app = new App({
 	props: {
 		valueDescription: "popularity rating",
 		shortValueDescription: "rating",
-		requestURI: "http://herokuapp",
+		requestURI: "https://spotify-higher-lower-api.herokuapp.com/random",
 	},
 });
 
