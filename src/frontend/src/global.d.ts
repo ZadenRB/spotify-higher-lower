@@ -1,7 +1,8 @@
 /// <reference types="svelte" />
 
-interface ValuedObject {
+interface Song {
     name: string;
-    value: number;
+    artists: string;
+    popularity: number;
     image: string;
 }

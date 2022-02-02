@@ -1,19 +1,14 @@
 <script lang="ts">
-	export let item: ValuedObject;
-	export let valueDescription: string;
+	export let item: Song;
+	export let popularityDescription: string;
 </script>
 
 <div class="item">
 	<div class="item-content">
-		<div class="keyword">
-			<span class="name">{item.name}</span>
-			<img class="image" src={item.image} alt={item.name} />
-			<span>has a</span>
-		</div>
-		<div class="value-group">
-			<span class="value">{item.value}</span>
-			<span>{valueDescription}</span>
-		</div>
+		<img class="image" src={item.image} alt={item.name} />
+		<div class="name">{item.name}</div>
+		<div class="artists">{item.artists}</div>
+		<div class="popularity">{item.popularity} {popularityDescription}</div>
 	</div>
 </div>
 

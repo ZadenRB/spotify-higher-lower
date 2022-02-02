@@ -50,6 +50,6 @@
     }
 
     .button {
-        width: 100px;
+        width: 140px;
     }
 </style>

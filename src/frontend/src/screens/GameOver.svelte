@@ -13,19 +13,7 @@
         {#if loading}
             <Spinner />
         {:else}
-            <div class="buttons">
-                <div
-                    class="button"
-                    tabindex="0"
-                    on:click={back}
-                    on:keypress={(event) => {
-                        if (event.key == "Enter") {
-                            back();
-                        }
-                    }}
-                >
-                    Back to Menu
-                </div>
+            <div class="over-buttons">
                 <div
                     class="button"
                     tabindex="0"
@@ -38,7 +26,25 @@
                 >
                     Play Again
                 </div>
+                <div
+                    class="button"
+                    tabindex="0"
+                    on:click={back}
+                    on:keypress={(event) => {
+                        if (event.key == "Enter") {
+                            back();
+                        }
+                    }}
+                >
+                    Back to Menu
+                </div>
             </div>
         {/if}
     </div>
 </main>
+
+<style>
+    .button {
+        width: 140px;
+    }
+</style>

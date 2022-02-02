@@ -2,9 +2,13 @@
 
 html,
 body {
-    position: relative;
-    width: 100%;
+    position: fixed;
+    width: 100vw;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -18,7 +22,7 @@ body {
 
 main {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -28,11 +32,14 @@ main {
 
 .button {
     text-align: center;
-    padding: 10px 20px;
+    height: 4vh;
+    width: max(10vw, 78px);
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
     border: 1px solid white;
-    border-radius: 20px;
+    border-radius: 2vh;
+    box-sizing: border-box;
     cursor: pointer;
     color: #1db964;
     transition: background-color 150ms ease, color 150ms ease;
@@ -61,110 +68,98 @@ main {
     justify-content: center;
 }
 
+.button-loading-group .button {
+    height: 40px;
+    border-radius: 20px;
+}
+
 
 /** Items **/
 
 .item {
     width: 50vw;
-    height: 100vh;
+    height: 100%;
+    padding: 0 5vw;
     overflow: hidden;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 calc(min(10vw, 120px) / 2);
     box-sizing: border-box;
 }
 
 .item-content {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
-.keyword {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-direction: column;
-}
-
-.name,
-.value {
-    font-size: 6vh;
-}
-
-.name {
-    text-align: center;
-    line-clamp: 2;
-    overflow: hidden;
-    display: -moz-box;
-    display: -webkit-box;
-    -moz-box-orient: vertical;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    max-width: 40vw;
-}
-
-.value {
+.popularity {
     color: #1db964;
+    height: 4vh;
+    font-size: 3vh;
+    line-height: 4vh;
+    display: flex;
+    align-items: center;
 }
 
 .image {
-    width: min(38vw, 40vh);
-    height: min(38vw, 40vh);
-    max-width: 800px;
-    max-height: 800px;
+    display: block;
+    width: min(100%, 40vh);
     border: 1px solid white;
+    box-sizing: border-box;
 }
 
-.button-group,
-.value-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+.name {
+    font-size: 22px;
+    font-weight: 600;
+    overflow: hidden;
+    width: min(100%, 40vh);
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+.artists {
+    color: #BBBBBB;
+    overflow: hidden;
+    width: min(100%, 40vh);
+    text-overflow: clip;
+    white-space: nowrap;
+    margin-bottom: 5px;
 }
 
 .buttons {
-    height: 100px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
-@media (min-width: 895px) {
-    .keyword {
-        height: calc(min(38vw, 40vh) + 15vh + 20px);
-    }
-    .button-group,
-    .value-group {
-        height: 140px;
-    }
+.buttons .button {
+    margin: 0 4px;
+}
+
+.over-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.over-buttons .button {
+    margin: 4px 0;
 }
 
 @media (max-width: 894px) {
     .item {
+        height: 50%;
         width: 100vw;
-        height: 50vh;
-        overflow: hidden;
-        padding: calc(min(6vh, 120px) / 2) 0;
+        padding: 3vh 0;
     }
-    .name,
-    .value {
-        font-size: 5vw;
+    .item-content {
+        width: min(100%, 25vh);
     }
     .image {
-        width: 25vh;
-        height: 25vh;
-    }
-    .buttons {
-        height: 42px;
-        width: 40vw;
-        min-width: 264px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
+        width: min(100%, 25vh);
     }
 }

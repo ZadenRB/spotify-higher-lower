@@ -7,12 +7,11 @@
     import UnrevealedItem from "../components/UnrevealedItem.svelte";
     import RevealedItem from "../components/RevealedItem.svelte";
 
-    export let valueDescription: string;
-    export let shortValueDescription: string;
+    export let popularityDescription: string;
     export let requestURI: string;
-    export let current: ValuedObject;
-    export let atBat: ValuedObject;
-    export let onDeck: ValuedObject;
+    export let current: Song;
+    export let atBat: Song;
+    export let onDeck: Song;
 
     export let onEnd: () => void;
 
@@ -49,8 +48,8 @@
 
     const afterReveal = (higher: boolean) => {
         if (
-            (higher && atBat.value >= current.value) ||
-            (!higher && atBat.value <= current.value)
+            (higher && atBat.popularity >= current.popularity) ||
+            (!higher && atBat.popularity <= current.popularity)
         ) {
             score += 1;
             if (score > highScore) {
@@ -82,23 +81,17 @@
         id="items"
         style={window.innerWidth > 894
             ? "left: " + dist + "vw;"
-            : "top: " + dist + "vh;"}
+            : "top: " + dist + "%;"}
     >
-        <RevealedItem item={current} {valueDescription} />
+        <RevealedItem item={current} {popularityDescription} />
         <RevealableItem
             item={atBat}
-            comparedName={current.name}
             {reveal}
             {afterReveal}
-            {valueDescription}
-            {shortValueDescription}
+            {popularityDescription}
             {showValue}
         />
-        <UnrevealedItem
-            item={onDeck}
-            comparedName={atBat.name}
-            {shortValueDescription}
-        />
+        <UnrevealedItem item={onDeck} />
     </div>
     {#if showStatus}
         <div id="neutral" transition:scale>VS</div>
@@ -136,6 +129,8 @@
     }
 
     #items {
+        height: 100%;
+
         position: absolute;
 
         display: flex;
@@ -149,7 +144,7 @@
         max-width: 120px;
         max-height: 120px;
         position: absolute;
-        top: calc(50vh - calc(min(10vw, 120px) / 2));
+        top: calc(50% - calc(min(10vw, 120px) / 2));
         left: calc(50vw - calc(min(10vw, 120px) / 2));
 
         display: flex;
@@ -203,7 +198,7 @@
         #neutral {
             width: 6vh;
             height: 6vh;
-            top: calc(50vh - calc(min(6vh, 120px) / 2));
+            top: calc(50% - calc(min(6vh, 120px) / 2));
             left: calc(50vw - calc(min(6vh, 120px) / 2));
         }
 

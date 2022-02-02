@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/go-chi/chi"
@@ -16,10 +17,11 @@ import (
 	"golang.org/x/oauth2/clientcredentials"
 )
 
-type ValuedObject struct {
-	Name  string `json:"name"`
-	Value int    `json:"value"`
-	Image string `json:"image"`
+type Song struct {
+	Name       string `json:"name"`
+	Artists    string `json:"artists"`
+	Popularity int    `json:"popularity"`
+	Image      string `json:"image"`
 }
 
 var client spotify.Client
@@ -76,10 +78,20 @@ func getRandomSong(w http.ResponseWriter, r *http.Request) {
 
 	song := searchResult.Tracks.Tracks[0]
 
-	randomSong := ValuedObject{
-		Name:  song.Name,
-		Value: song.Popularity,
-		Image: song.Album.Images[0].URL,
+	var artistsBuilder strings.Builder
+	for i, artist := range song.Artists {
+		if i != 0 {
+			artistsBuilder.WriteRune(',')
+			artistsBuilder.WriteRune(' ')
+		}
+		artistsBuilder.WriteString(artist.Name)
+	}
+
+	randomSong := Song{
+		Name:       song.Name,
+		Artists:    artistsBuilder.String(),
+		Popularity: song.Popularity,
+		Image:      song.Album.Images[0].URL,
 	}
 
 	render.JSON(w, r, randomSong)

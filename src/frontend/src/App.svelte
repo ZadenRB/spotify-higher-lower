@@ -3,13 +3,12 @@
 	import GameOver from "./screens/GameOver.svelte";
 	import Menu from "./screens/Menu.svelte";
 
-	export let valueDescription: string;
-	export let shortValueDescription: string;
+	export let popularityDescription: string;
 	export let requestURI: string;
 
-	let current: ValuedObject;
-	let atBat: ValuedObject;
-	let onDeck: ValuedObject;
+	let current: Song;
+	let atBat: Song;
+	let onDeck: Song;
 
 	let gameOver = false;
 	let loading = false;
@@ -45,8 +44,7 @@
 	<GameOver {loading} restart={onPlay} back={toMenu}/>
 {:else if playing && current && atBat && onDeck}
 	<Game
-		{valueDescription}
-		{shortValueDescription}
+		{popularityDescription}
 		{requestURI}
 		{current}
 		{atBat}
