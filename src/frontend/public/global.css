@@ -34,6 +34,7 @@ main {
     text-align: center;
     height: 4vh;
     width: max(10vw, 78px);
+    max-width: 110px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -69,6 +70,7 @@ main {
 }
 
 .button-loading-group .button {
+    max-width: inherit;
     height: 40px;
     border-radius: 20px;
 }
