@@ -113,22 +113,80 @@ main {
     box-sizing: border-box;
 }
 
-.name {
+@-webkit-keyframes scroll {
+    0%,
+    10% {
+        -webkit-transform: translateX(0%);
+    }
+    90%,
+    100% {
+        -webkit-transform: translateX(min(calc(-100% + min(40vw, 40vh)), 0%));
+    }
+}
+
+@keyframes scroll {
+    0%,
+    10% {
+        transform: translateX(0%);
+    }
+    90%,
+    100% {
+        transform: translateX(min(calc(-100% + min(40vw, 40vh)), 0%));
+    }
+}
+
+@-webkit-keyframes scroll-small {
+    0%,
+    10% {
+        -webkit-transform: translateX(0%);
+    }
+    90%,
+    100% {
+        -webkit-transform: translateX(min(calc(-100% + 25vh), 0%));
+    }
+}
+
+@keyframes scroll-small {
+    0%,
+    10% {
+        transform: translateX(0%);
+    }
+    90%,
+    100% {
+        transform: translateX(min(calc(-100% + 25vh), 0%));
+    }
+}
+
+.name-wrapper {
+    text-align: left;
     font-size: 22px;
     font-weight: 600;
     overflow: hidden;
-    width: min(100%, 40vh);
+    width: min(40vw, 40vh);
     text-overflow: clip;
     white-space: nowrap;
 }
 
-.artists {
+.name-wrapper .name {
+    display: inline-block;
+    animation: scroll 10s linear alternate infinite;
+    -webkit-animation: scroll 10s linear alternate infinite;
+}
+
+.artists-wrapper {
+    text-align: left;
     color: #BBBBBB;
     overflow: hidden;
-    width: min(100%, 40vh);
+    width: min(40vw, 40vh);
     text-overflow: clip;
     white-space: nowrap;
     margin-bottom: 5px;
+}
+
+.artists-wrapper .artists {
+    display: inline-block;
+    animation: scroll 10s linear alternate infinite;
+    -webkit-animation: scroll 10s linear alternate infinite;
 }
 
 .buttons {
@@ -157,9 +215,25 @@ main {
         padding: 3vh 0;
     }
     .item-content {
-        width: min(100%, 25vh);
+        width: 25vh;
     }
     .image {
-        width: min(100%, 25vh);
+        width: 25vh;
+    }
+    .name-wrapper {
+        width: 25vh;
+    }
+    .name-wrapper .name {
+        display: inline-block;
+        animation: scroll 10s linear alternate infinite;
+        -webkit-animation: scroll-small 10s linear alternate infinite;
+    }
+    .artists-wrapper {
+        width: 25vh;
+    }
+    .artists-wrapper .artists {
+        display: inline-block;
+        animation: scroll-small 10s linear alternate infinite;
+        -webkit-animation: scroll-small 10s linear alternate infinite;
     }
 }
