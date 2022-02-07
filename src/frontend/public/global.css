@@ -169,10 +169,8 @@ main {
     white-space: nowrap;
 }
 
-.name-wrapper .name {
+.name {
     display: inline-block;
-    animation: scroll 10s linear alternate infinite;
-    -webkit-animation: scroll 10s linear alternate infinite;
 }
 
 .artists-wrapper {
@@ -185,8 +183,11 @@ main {
     margin-bottom: 5px;
 }
 
-.artists-wrapper .artists {
+.artists {
     display: inline-block;
+}
+
+.scrolling {
     animation: scroll 10s linear alternate infinite;
     -webkit-animation: scroll 10s linear alternate infinite;
 }
@@ -225,16 +226,10 @@ main {
     .name-wrapper {
         width: 25vh;
     }
-    .name-wrapper .name {
-        display: inline-block;
-        animation: scroll 10s linear alternate infinite;
-        -webkit-animation: scroll-small 10s linear alternate infinite;
-    }
     .artists-wrapper {
         width: 25vh;
     }
-    .artists-wrapper .artists {
-        display: inline-block;
+    .scrolling {
         animation: scroll-small 10s linear alternate infinite;
         -webkit-animation: scroll-small 10s linear alternate infinite;
     }

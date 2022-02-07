@@ -21,10 +21,10 @@
 	<div class="item-content">
 		<img class="image" src={item.image} alt={item.name} />
         <div class="name-wrapper">
-            <span class="name">{item.name}</span>
+            <span class="name scrolling">{item.name}</span>
         </div>
         <div class="artists-wrapper">
-            <span class="artists">{item.artists}</span>
+            <span class="artists scrolling">{item.artists}</span>
         </div>
 		{#if !showValue}
 			<div class="buttons">
